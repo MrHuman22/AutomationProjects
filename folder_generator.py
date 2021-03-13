@@ -28,11 +28,11 @@ class Key(Enum):
 folders = [
     "PRFs",
     "Score Sheets",
-    "Accommodation",
     "Guides",
     "Attendance Sheets",
     "Certificates",
-    "Travel Diary"
+    "Travel Diary",
+    "Final Report"
 ]
 
 layout = [[sg.Text("Choose an event folder"),sg.FolderBrowse(key=Key.PATH.value)],
