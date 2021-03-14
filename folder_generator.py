@@ -13,6 +13,10 @@ Folders:
     - Certificates (Optional)
     - Trophy (Optional)
 
+Automatically adds event day subfolders to the PRFs folder
+
+Stretch Goal:
+TODO:
 Also generates a packing list in my private Trello
 """
 
