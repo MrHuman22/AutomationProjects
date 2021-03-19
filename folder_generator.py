@@ -84,7 +84,10 @@ for each_folder in folders:
     print(f"Now adding {each_folder} into path")
     new_folder_path = os.path.join(values[Key.PATH.value],each_folder)
     print(new_folder_path)
-    os.mkdir(new_folder_path)
+    if not os.path.exists(new_folder_path):
+        os.mkdir(new_folder_path)
+    else:
+        pass
 
 # now adding the subfolders for each day in the PRF folder
 # find the actual start date by taking the travel start date and adding travel_days_before
