@@ -53,7 +53,9 @@ folders = [
     "Attendance Sheets",
     "Certificates",
     "Travel Diary",
-    "Final Report"
+    "Final Report",
+    "Media Consent",
+    "To Print"
 ]
 
 layout = [[sg.Text("Choose an event folder:"),sg.FolderBrowse(key=Key.PATH.value)],
