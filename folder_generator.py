@@ -74,10 +74,10 @@ while True:
         break
 
 if values[Key.TROPHY.value]:
-    folders.append(Key.TROPHY.value.lower()),
+    folders.append(Key.TROPHY.value.title()),
 
 if values[Key.CERTIFICATES.value]:
-    folders.append(Key.CERTIFICATES.value.lower())
+    folders.append(Key.CERTIFICATES.value.title())
 
 for k, v in values.items():
     print(f"{k}: {v}")
