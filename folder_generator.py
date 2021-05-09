@@ -41,6 +41,7 @@ class Key(Enum):
     TRELLO_API_KEY = "TRELLO_API_KEY"
     TRELLO_TOKEN = "TRELLO_TOKEN"
     PRFS = "PRFs"
+    TO_PRINT = "To Print"
 
 api_key = config(Key.TRELLO_API_KEY.value)
 token = config(Key.TRELLO_TOKEN.value)
@@ -91,7 +92,7 @@ for each_folder in folders:
     else:
         pass
 
-# now adding the subfolders for each day in the PRF folder
+# now adding the subfolders for each day in the PRF folder and To Print
 # find the actual start date by taking the travel start date and adding travel_days_before
 travel_start_date = datetime.strptime(values[Key.START_DATE.value],date_format)
 event_start_date = travel_start_date + timedelta(days=int(values[Key.TRAVEL_DAYS_BEFORE.value]))
@@ -100,8 +101,13 @@ for x in range(event_day_count):
     event_date = event_start_date + timedelta(days=x)
     folder_name = event_date.strftime(date_format + " %a")
     # print(folder_name)
-    new_subfolder_path = os.path.join(values[Key.PATH.value],Key.PRFS.value,folder_name)
-    os.mkdir(new_subfolder_path)
+    # Add subfolders to PRFs
+    prf_subfolder_path = os.path.join(values[Key.PATH.value],Key.PRFS.value,folder_name)
+    os.mkdir(prf_subfolder_path)
+    toprint_subfolder_path = os.path.join(values[Key.PATH.value], Key.TO_PRINT.value,folder_name)
+    os.mkdir(toprint_subfolder_path)
+
+
 
 # start_date = "21-03-15"
 # travel_days = 1
